@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import NavMenu from './components/Navbar/Navbar';
+import ItemlistContainer from './components/ItemlistContainer/ItemlistContailer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+
+let log='recomers'
+let saludo='Bienvenidos a este sitio Web!'
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavMenu logo={log}/>
+      <ItemlistContainer greeting={saludo}/>
     </div>
   );
 }
