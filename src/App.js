@@ -1,7 +1,8 @@
 import React from 'react'
-import './App.css';
 import NavMenu from './components/Navbar/Navbar';
-import ItemlistContainer from './components/ItemlistContainer/ItemlistContailer';
+import ItemlistContainer from './components/ItemlistContainer/ItemlistContainer';
+import Contador from './components/Contador/Contador';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <NavMenu logo={log}/>
       <ItemlistContainer greeting={saludo}/>
+      <Contador />
     </div>
   );
 }
