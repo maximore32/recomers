@@ -2,6 +2,7 @@ import CartWidget from "../CartWidget/CartWidget"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link, NavLink } from "react-router-dom";
 
 
 
@@ -10,12 +11,13 @@ const NavMenu = ({logo}) =>{
     
     <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand style={{fontSize:"40px",marginRight:"100px"}} href="/">{logo.toLocaleUpperCase()}</Navbar.Brand>
+          <Link to="/" style={{textDecoration:"none"}}><Navbar.Brand style={{fontSize:"40px",marginRight:"100px"}} href="/">{logo.toLocaleUpperCase()}</Navbar.Brand></Link> 
           <Nav className="me-auto">
-            <Nav.Link href="#home">Nosotros</Nav.Link>
-            <Nav.Link href="#features">Productos</Nav.Link>
-            <Nav.Link href="#pricing">Contacto</Nav.Link>
-            <Nav.Link href="#pricing">Fotos</Nav.Link>
+            <NavLink to="/categoria/tecnologia" className="a">Tecnologia</NavLink>
+            <NavLink to="/categoria/deportes" className="a">Deportes</NavLink>
+            <NavLink to="/categoria/automotores" className="a">Autos</NavLink>
+            <NavLink to="/categoria/juguetes" className="a">Juguetes</NavLink>
+            <NavLink to="/categoria/hogar" className="a">Hogar</NavLink>          
           </Nav>
           <CartWidget/>
         </Container>

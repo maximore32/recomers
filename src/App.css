@@ -3,6 +3,9 @@ body{
     padding: 0;
     
 }
+.App{
+    width: 100%;
+}
 .itempar{
     text-align: center;
 }
@@ -12,4 +15,47 @@ body{
 .me-auto{
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.cuerpo{
+    width: 31%;
+    float: left;
+    margin: 10px;
+    height: 400px;
+}
+
+
+
+.pie{
+    background-color: black;
+    text-align: center;
+    font-size: 25px;
+    float: left;
+    width: 100%;
+    color: aliceblue;
+    margin-top: 30px;
+}
+
+.a{
+    text-decoration: none;
+    color: lavender;
+    margin-right: 10px;
+}
+.a >a :hover{
+    color: darkred;
+}
+
+#detail{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+}
+.card-text{
+    font-size: "15px";
+}
+
+.card-img-top{
+    height: 200px;
+}
+.card{
+    width: 100px;
 }

@@ -1,9 +1,14 @@
 import React from 'react'
+import { Routes,Route, Navigate } from 'react-router-dom'
 import NavMenu from './components/Navbar/Navbar';
-import ItemlistContainer from './components/ItemlistContainer/ItemlistContainer';
-import Contador from './components/Contador/Contador';
+import ItemlistContainer from './components/itemListContain/itemListContainer';
+import ItemDetailContainer from './components/itemDetailContainer/itemDetailContainer';
+import Footer from './components/Footer/Footer';
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 
 
 
@@ -17,8 +22,15 @@ function App() {
   return (
     <div className="App">
       <NavMenu logo={log}/>
-      <ItemlistContainer greeting={saludo}/>
-      <Contador />
+      <Routes>
+        <Route path='/' element={<ItemlistContainer  greeting={saludo}/>} />
+        <Route path='/categoria/:categid' element={<ItemlistContainer  greeting={saludo}/>} />
+        <Route path='/detail/:prodid' element={<ItemDetailContainer />} />
+        <Route path='*' element={<Navigate to="/" />} />
+
+      </Routes>      
+      <Footer logo={log} />
+      
     </div>
   );
 }

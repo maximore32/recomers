@@ -1,6 +1,6 @@
 import Item from '../Item/Item'
 
-const ItemList =({prodcs})=>{
+const ItemList =({prodcs,loading})=>{
 
     return(
         <>
