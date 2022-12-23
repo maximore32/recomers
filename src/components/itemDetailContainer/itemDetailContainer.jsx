@@ -1,7 +1,6 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useState,useParams,useEffect } from "react";
 import { simulFetch } from "../../Helpers/simulFetch";
+
 import ItemDetail from "../itemDetail/itemDetail";
 
 
@@ -16,8 +15,7 @@ const ItemDetailContainer = ()=>{
         .catch(err=>console.log(err))
 
     },[prodid])
-    console.log(prodid);
-    console.log(product);
+    
 
     return(
         <>

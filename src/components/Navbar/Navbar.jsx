@@ -19,7 +19,8 @@ const NavMenu = ({logo}) =>{
             <NavLink to="/categoria/juguetes" className="a">Juguetes</NavLink>
             <NavLink to="/categoria/hogar" className="a">Hogar</NavLink>          
           </Nav>
-          <CartWidget/>
+          <Link to="/cart"><CartWidget/></Link>
+          
         </Container>
     </Navbar>
 

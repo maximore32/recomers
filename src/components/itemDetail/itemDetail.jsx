@@ -1,12 +1,20 @@
 //import { Link } from "react-router-dom"
 //import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
+import { useCartContext } from '../../context/CartContext';
 import Contador from "../Contador/Contador";
 
 
 
 const ItemDetail =({product})=>{
-  console.log(product);
+  const{addToCart,cartList} = useCartContext()
+  console.log(cartList);
+
+  const onAdd = (cantidad)=>{alert(cantidad)
+    addToCart({...product,cantidad})
+  }
+  console.log(cartList);
     return(
         
     <div  style={{marginTop:"40px",height:"650px"}}>
@@ -18,7 +26,7 @@ const ItemDetail =({product})=>{
                 <h3 style={{FontZise:"20px"}}>{product.precio}</h3>
                 <p>{product.descripcion}</p>
             </Card.Text>        
-             < Contador />
+             < Contador onAdd={onAdd} />
            </Card.Body>
          </Card>    
     </div>
