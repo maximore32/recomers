@@ -1,7 +1,9 @@
-import { useState,useParams,useEffect } from "react";
-import { simulFetch } from "../../Helpers/simulFetch";
+import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+//import { simulFetch } from "../../Helpers/simulFetch";
 
 import ItemDetail from "../itemDetail/itemDetail";
+import {doc, getDoc, getFirestore} from "firebase/firestore";
 
 
 const ItemDetailContainer = ()=>{
@@ -9,17 +11,27 @@ const ItemDetailContainer = ()=>{
     const {prodid} = useParams()
 
 
-    useEffect( ()=>{
+    /*useEffect( ()=>{
         simulFetch(prodid)
         .then(res=>setProduct(res))
         .catch(err=>console.log(err))
 
+    },[prodid])*/
+
+    useEffect( ()=>{
+        const db= getFirestore();
+        const queryDoc= doc(db,"productos",prodid);
+        getDoc(queryDoc)
+        .then(res => setProduct({id: res.id, ...res.data()}))
+        .catch(err=>console.log(err))
     },[prodid])
-    
+
+
+    console.log(product)   
 
     return(
         <>
-        < ItemDetail product={product} />
+           <ItemDetail product={product} />
          
         </>
     )

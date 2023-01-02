@@ -11,7 +11,7 @@ const NavMenu = ({logo}) =>{
     
     <Navbar bg="dark" variant="dark">
         <Container>
-          <Link to="/" style={{textDecoration:"none"}}><Navbar.Brand style={{fontSize:"40px",marginRight:"100px"}} href="/">{logo.toLocaleUpperCase()}</Navbar.Brand></Link> 
+          <Link to="/" style={{textDecoration:"none"}}><Navbar.Brand style={{fontSize:"40px",marginRight:"100px"}}>{logo.toLocaleUpperCase()}</Navbar.Brand></Link> 
           <Nav className="me-auto">
             <NavLink to="/categoria/tecnologia" className="a">Tecnologia</NavLink>
             <NavLink to="/categoria/deportes" className="a">Deportes</NavLink>

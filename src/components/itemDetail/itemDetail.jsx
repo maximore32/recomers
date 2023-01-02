@@ -1,18 +1,23 @@
 //import { Link } from "react-router-dom"
 //import Button from 'react-bootstrap/Button';
 
+import { useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import { Link } from 'react-router-dom';
 import { useCartContext } from '../../context/CartContext';
 import Contador from "../Contador/Contador";
 
 
 
 const ItemDetail =({product})=>{
+  const[isButton,setIsButton ]=useState(true)
   const{addToCart,cartList} = useCartContext()
   console.log(cartList);
 
   const onAdd = (cantidad)=>{alert(cantidad)
     addToCart({...product,cantidad})
+    setIsButton(false)
+
   }
   console.log(cartList);
     return(
@@ -25,8 +30,15 @@ const ItemDetail =({product})=>{
             <Card.Text >
                 <h3 style={{FontZise:"20px"}}>{product.precio}</h3>
                 <p>{product.descripcion}</p>
-            </Card.Text>        
-             < Contador onAdd={onAdd} />
+            </Card.Text>
+            {isButton ? < Contador onAdd={onAdd} />  :
+            <>
+            <Link to="/cart"><button>Ir al Carrito</button></Link>
+            <Link to="/"><button>Seguir comprando</button></Link>            
+            </>          
+            
+            }        
+             
            </Card.Body>
          </Card>    
     </div>

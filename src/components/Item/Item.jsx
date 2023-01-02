@@ -2,6 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 const Item =({product})=>{
+  
     return(
  <main className="cuerpo">
     <div className='boxcontent'>
@@ -10,7 +11,7 @@ const Item =({product})=>{
       <Card.Body>
         <Card.Title>{`${product.producto} - ${product.categoria}`}</Card.Title>
         <Card.Text>
-          <p>{product.precio}</p>
+          <strong style={{color:"darkred"}}>{product.precio}</strong>
         </Card.Text>
         <Link to={`/detail/${product.id}`}><Button variant="primary">Detalle</Button></Link>
       </Card.Body>
