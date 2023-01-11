@@ -27,7 +27,7 @@ const ItemDetailContainer = ()=>{
     },[prodid])
 
 
-    console.log(product)   
+       
 
     return(
         <>

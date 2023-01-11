@@ -1,5 +1,6 @@
 import { addDoc, collection, getFirestore,} from "firebase/firestore"
 import { useState } from "react"
+import swal from 'sweetalert';
 import { useCartContext } from "../../context/CartContext"
 
 
@@ -27,7 +28,9 @@ const Formu = ()=>{
     
         addDoc(queryOrder, order)        
         .then( resp => {
-          console.log(resp)
+          console.log("resp",resp)
+          swal("Listo!", "Numero unico de orden : "+resp.id, "success");
+          
           setOrderID(resp.id)
           })
         .catch(err => console.log(err))
@@ -49,9 +52,7 @@ const Formu = ()=>{
       })
     }
 
-    return(
-      <>
-      { orderID ? alert({orderID}) :
+    return(      
         <form onSubmit={generarOrden} style={{marginTop:"40px", padding:"10px",backgroundColor:"lightgray", textAlign:"center"}}>
         
           <label htmlFor="name" className="formulabel">Nombre Completo</label>
@@ -93,7 +94,7 @@ const Formu = ()=>{
         <button className="btn btn-outline-danger" onClick={vaciarCarrito}
       >Vaciar Carrito</button>
         </div>       
-      </form>}</>
+      </form>
     )
 }
 export default Formu

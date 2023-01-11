@@ -10,15 +10,15 @@ import swal from 'sweetalert';
 
 const ItemDetail =({product})=>{
   const[isButton,setIsButton ]=useState(true)
-  const{addToCart,cartList} = useCartContext()
-  console.log(cartList);
+  const{addToCart} = useCartContext()
+  
 
   const onAdd = (cantidad)=>{swal("Listo!", "Cantidad seleccionada : "+cantidad, "success");    
     addToCart({...product,cantidad})
     setIsButton(false)
 
   }
-  console.log(cartList);
+  
     return(
         
     <div  style={{marginTop:"40px",height:"650px"}}>

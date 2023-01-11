@@ -5,7 +5,7 @@ import NoProducts from "../NoProducts/NoProducts"
 
 const CartContainer = () => {
   const { cartList,totalPrice,totalCant} = useCartContext()
-  console.log(cartList)
+  
   
  
   return (
@@ -22,15 +22,3 @@ const CartContainer = () => {
 
 export default CartContainer;
 
-/*<li key={product.id}>
-<img src={product.imagen} alt="" className="w-25"/>
-{product.producto} - Cantidad: {product.cantidad} - Precio: {product.precio}
-<button className="btn" onClick={()=>itemDelet(product.id)}> X </button>
-</li>*/
-
- // actualizar 
-    // const queryUpdate = doc(db, 'productos', '25Z55SGnHif7Ab1WHxBk') // 
-    // updateDoc(queryUpdate, {
-    //   stock: 100
-    // })
-    // .then( () => console.log('terminó la actulaización'))

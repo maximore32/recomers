@@ -10,7 +10,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 let log='recomers'
-let saludo='Bienvenidos a este sitio Web!'
+let saludo='Bienvenidos!En el sitio web podran encontrar variedad de productos.'
 
 
 function App() {
