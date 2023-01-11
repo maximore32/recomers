@@ -11,13 +11,6 @@ const ItemDetailContainer = ()=>{
     const {prodid} = useParams()
 
 
-    /*useEffect( ()=>{
-        simulFetch(prodid)
-        .then(res=>setProduct(res))
-        .catch(err=>console.log(err))
-
-    },[prodid])*/
-
     useEffect( ()=>{
         const db= getFirestore();
         const queryDoc= doc(db,"productos",prodid);
