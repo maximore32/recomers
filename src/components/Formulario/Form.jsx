@@ -5,6 +5,7 @@ import { useCartContext } from "../../context/CartContext"
 
 const Formu = ()=>{
     const { cartList, vaciarCarrito} = useCartContext()
+    const [orderID, setOrderID] = useState()
     const [dataForm, setDataForm] = useState({
         name: "",
         email: "",
@@ -26,6 +27,10 @@ const Formu = ()=>{
     
         addDoc(queryOrder, order)
         .then( resp => console.log(resp))
+        .then( resp => {
+          console.log(resp)
+          setOrderID(resp.id)
+          })
         .catch(err => console.log(err))
         .finally(()=> {
           vaciarCarrito()
@@ -34,6 +39,7 @@ const Formu = ()=>{
             email: "",
             phone: ""
           })
+          
           
         })   
       }
@@ -45,6 +51,7 @@ const Formu = ()=>{
     }
 
     return(
+      { orderID ? <h1>Su ID de compra es: {orderID} </h1> :
         <form onSubmit={generarOrden} style={{marginTop:"40px", padding:"10px",backgroundColor:"lightgray", textAlign:"center"}}>
         
           <label htmlFor="name" className="formulabel">Nombre Completo</label>
@@ -53,8 +60,9 @@ const Formu = ()=>{
             className="form-control" 
             name="name" 
             value={dataForm.name}
-            placeholder="Ingrese el nombre" 
+            placeholder="Ingrese el nombre" required
             onChange={handleOnChange}
+            
 
           />
           <label htmlFor="email" className="formulabel">emial</label>
@@ -63,7 +71,7 @@ const Formu = ()=>{
             className="form-control" 
             name="email" 
             value={dataForm.email}
-            placeholder="Ingrelse el email" 
+            placeholder="Ingrelse el email" required
             onChange={handleOnChange}
           />
           <label htmlFor="tel" className="formulabel">Telefono</label>
@@ -72,7 +80,7 @@ const Formu = ()=>{
             className="form-control" 
             name="phone" 
             value={dataForm.phone}
-            placeholder="Ingrelse el tel" 
+            placeholder="Ingrelse el tel" required
             onChange={handleOnChange}
           />          
         
@@ -85,7 +93,7 @@ const Formu = ()=>{
         <button className="btn btn-outline-danger" onClick={vaciarCarrito}
       >Vaciar Carrito</button>
         </div>       
-      </form>
+      </form>}
     )
 }
 export default Formu
