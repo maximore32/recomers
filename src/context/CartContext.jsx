@@ -29,7 +29,7 @@ export const CartContextProvedor = ({children}) =>{
     const vaciarCarrito = ()=>setCartLits([])
     const totalCant=()=> cartList.reduce((count,product)=>count+=product.cantidad , 0)
     const totalPrice=()=> cartList.reduce((count,product)=>count+=(product.cantidad * product.precio) , 0)
-    const itemDelet = (id) => setCartLits(cartList.filter(product => product.id === id))
+    const itemDelet = (id) => setCartLits(cartList.filter(product => product.id !== id))
 
 
 

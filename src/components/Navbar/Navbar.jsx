@@ -13,13 +13,13 @@ const NavMenu = ({logo}) =>{
         <Container>
           <Link to="/" style={{textDecoration:"none"}}><Navbar.Brand style={{fontSize:"40px",marginRight:"100px"}}>{logo.toLocaleUpperCase()}</Navbar.Brand></Link> 
           <Nav className="me-auto">
-            <NavLink to="/categoria/tecnologia" className="a">Tecnologia</NavLink>
-            <NavLink to="/categoria/deportes" className="a">Deportes</NavLink>
-            <NavLink to="/categoria/automotores" className="a">Autos</NavLink>
-            <NavLink to="/categoria/juguetes" className="a">Juguetes</NavLink>
-            <NavLink to="/categoria/hogar" className="a">Hogar</NavLink>          
+            <NavLink to="/categoria/Tecnologia" className="a">Tecnologia</NavLink>
+            <NavLink to="/categoria/Deportes" className="a">Deportes</NavLink>
+            <NavLink to="/categoria/Automotores" className="a">Autos</NavLink>
+            <NavLink to="/categoria/Juguetes" className="a">Juguetes</NavLink>
+            <NavLink to="/categoria/Hogar" className="a">Hogar</NavLink>          
           </Nav>
-          <Link to="/cart"><CartWidget/></Link>
+          <Link to="/cart" style={{textDecoration:"none"}}><CartWidget/></Link>
           
         </Container>
     </Navbar>

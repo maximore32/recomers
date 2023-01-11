@@ -10,7 +10,8 @@ body{
     text-align: center;
 }
 .cartw{
-    font-size:30px;
+    font-size:25px;
+    
 }
 .me-auto{
     font-size: 20px;
@@ -62,4 +63,18 @@ body{
 
 .load{
     text-align: center;
+}
+
+form{
+    width: 50%;
+    margin: 0 auto;
+    margin-top:"40px";
+}
+
+form,input{
+    width: 40%;
+    
+}
+.formulabel{
+    font-family: cursive;
 }

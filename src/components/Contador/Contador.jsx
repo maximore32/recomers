@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+
 
 const Contador = ({onAdd}) =>{
     const [ contador , setCount] = useState(1);
@@ -20,7 +20,7 @@ const Contador = ({onAdd}) =>{
         <center>
         <h3>{contador}</h3>      
         <button className="btn btn-outline-dark" onClick={moreCount}>+</button>
-        <Link to="/"><button className="btn btn-outline-dark" onClick={Onadd}>Agregar al carrito</button></Link>        
+        <button className="btn btn-outline-dark" onClick={Onadd}>Agregar al carrito</button>        
         <button className="btn btn-outline-dark" onClick={lessCount}>-</button>
         </center>
     )
