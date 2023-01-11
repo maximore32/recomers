@@ -25,8 +25,7 @@ const Formu = ()=>{
         const db = getFirestore()
         const queryOrder = collection(db, 'orders')  
     
-        addDoc(queryOrder, order)
-        .then( resp => console.log(resp))
+        addDoc(queryOrder, order)        
         .then( resp => {
           console.log(resp)
           setOrderID(resp.id)
@@ -51,7 +50,8 @@ const Formu = ()=>{
     }
 
     return(
-      { orderID ? <h1>Su ID de compra es: {orderID} </h1> :
+      <>
+      { orderID ? alert({orderID}) :
         <form onSubmit={generarOrden} style={{marginTop:"40px", padding:"10px",backgroundColor:"lightgray", textAlign:"center"}}>
         
           <label htmlFor="name" className="formulabel">Nombre Completo</label>
@@ -93,7 +93,7 @@ const Formu = ()=>{
         <button className="btn btn-outline-danger" onClick={vaciarCarrito}
       >Vaciar Carrito</button>
         </div>       
-      </form>}
+      </form>}</>
     )
 }
 export default Formu
